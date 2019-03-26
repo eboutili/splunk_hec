@@ -1,11 +1,11 @@
-#### In the following steps you'll enable and use Puppet Enterprise Code Manager to automatically install and sync this module onto your Puppet Server.
+#### In the following 2 steps you'll enable and use Puppet Enterprise Code Manager to automatically install and sync this module onto your Puppet Server.
 
 1. In the Console, go to Access Control -> User Role, and add the existing admin user to the existing code deployers role.
 2. Follow the instructions at the top of the [forge page for this module](https://forge.puppet.com/puppetlabs/splunk_hec) to install this module.
 
     - Reminder: If you're using awskit, your Puppetfile is in the control repo on the preconfigured Git server. The server runs on port 3000 of the Puppet Master. Example: `https://master.inf.puppet.vm:3000` Login with puppet/puppetlabs
 
-#### In the following steps you'll connect the PE master to the splunk server's HEC API service.
+#### In the following 4 steps you'll connect the PE master to the splunk server's HEC API service.
 3. From the PE Console Classification UI, go to Infrastructure -> Master -> Configuration, and add the splunk_hec class
     - Tip: This step also tests whether the 2 steps above worked. If something went wrong, you won't see the splunk_hec class in the drop-down menu. (You might have to force a refresh by clicking the refresh button on the upper right side of the screen.)
 4. In the same screen, set the following parameters for the splunk_hec class (There are other optional parameters, but for a basic demo or POC setup, it's fine to leave them blank):
