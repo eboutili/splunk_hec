@@ -17,3 +17,5 @@ EOF
 docker build -t splunkdemo_i .
 docker run --name splunkdemo_c --restart always -d -p 8000:8000 -p 8088:8088 splunkdemo_i
 docker exec splunkdemo_c bash -c 'sudo git clone "${GITHUB_URL}/${APP3}.git" "/opt/splunk/etc/apps/${APP3}"'
+
+
