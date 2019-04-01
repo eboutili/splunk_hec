@@ -6,10 +6,8 @@ Install a Splunk Demo Server and the Puppet Report Viewer (scripted)
 
 Copy the 
 [Splunk installation script](https://github.com/eboutili/splunk_hec/blob/master/demo_splunk.sh) 
-to a temporary directory on your Puppet Master server and run the script as root (or using sudo).
-
-Login with:
-`ssh -i ~/student.pem centos@<your-master-ip>`
+to a temporary directory on your Puppet Master server and run the script as root (or using sudo). 
+Login with: `ssh -i ~/student.pem centos@<your-master-ip>`
 
 The script downloads and installs the Docker version of Splunk Enterprise (includes a trial license). Then it runs the container and uses `docker exec` to install the Puppet Report Viewer add-on.
 
