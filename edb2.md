@@ -23,9 +23,11 @@ A new token is generated. You'll copy this the the Puppet Master later
 Install splunk_hec module in Puppet environment and configure with the HEC token and Splunk Server
 ------------
 Log into the Puppet Master: `https://<your-master-ip>`
+
 (allow the unsigned certificate if prompted)
 
 Browse to the Master configuration tab:
+
 `Classification -> <Expand the Master Group (click the + sign)> -> Configuration`
 
 Create a new class:
