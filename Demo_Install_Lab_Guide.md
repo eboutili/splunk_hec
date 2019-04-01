@@ -1,3 +1,6 @@
+Foundational Partner Training Lab
+==============
+
 Puppet/Splunk Demo Installation and Configuration
 ==============
 
