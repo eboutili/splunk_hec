@@ -5,11 +5,12 @@ Install a Splunk Demo Server and the Puppet Report Viewer (scripted)
 -----------
 
 Copy the Containerized Splunk installation script to a temporary directory on
-the Puppet Master server and run it as root or using sudo.
+the Puppet Master node and run it as root or using sudo.
 
-Create a HEC input for puppet summaries (Splunk Web UI)
+Create a HEC input for puppet summaries
 -----------
-Log into the new Splunk Server: `http://<your-master-ip>:8000`
+Log into the new Splunk Server's Console: `http://<your-master-ip>:8000`
+(Note: http not https)
 - Login/Password: admin/puppetlabs
 
 Browse to where you can enable the HEC collector and create a new token (for receiving puppet data)
@@ -30,11 +31,13 @@ Click `Review` and check for typos. Click `Submit`
 
 A new token is generated. (You'll copy this to the Puppet Master later.)
 
-Configure the HEC token and Splunk Server IP on the Puppet Master (Puppet Web UI)
+Install splunk_hec module in Puppet environment and configure with the HEC token and Splunk Server
 ------------
-Log into your demo Puppet Master: `https://<your-master-ip>`
+Log into the Puppet Master: `https://<your-master-ip>`
 
-(Since this is a temporary server/IP, you may have to click through a security certificate warning)
+(Note: This one _is_ https)
+
+(Since this is a demo IP address, you may have to click through a security certificate warning)
 
 Browse to the Master configuration tab:
 - Login/Password: admin/puppetlabs
@@ -47,17 +50,26 @@ Click `Master` and go to the `Configuration` tab
 
 Under `Classes`, add a new class called `splunk_hec`
 
-Click `Parameters` to see the list of available settings
+Click `Add Class`
 
-Define two parameters: (leave the others undefined)
-- server: `localhost`
-- token: `<paste the token created when you defined a new HEC collectory on the Splunk Server>
+Click `Parameter name` to see the list of available parameters
 
-Log into the command line of the Puppet Master server:
+Select `server` and set the value to `"localhost"` (include the double quotes)
+
+Click `Add Parameter`
+
+Click `Parameter name` again, this time select `token`
+
+In the value field, paste the token created when you defined a new HEC collectory on the Splunk Server
+in double quotes.
+
+### Command line step
+
+Log into the command line of the Puppet Master node:
 
 `ssh -i ~/student.pem centos@<your-master-ip>`
 
-Edit the puppet server configuration file:
+Edit the puppet server's configuration file:
 `sudo nano /etc/puppetlabs/puppet/puppet.conf`
 
 Go the line that says: `reports = puppetdb`
@@ -69,3 +81,4 @@ Save and exit the editor
 Do a puppet run:
 
 `sudo puppet agent -t`
+
