@@ -48,8 +48,6 @@ A new token is generated. (You'll copy this to the Puppet Master in the next set
 
 Log into the Puppet Console: `https://<your-master-ip>`
 
-(Note: This one _is_ https)
-
 (Since this is a demo IP address, you may have to click through a security certificate warning)
 
 Login/Password: admin/puppetlabs
