@@ -72,7 +72,7 @@ Click `Add Parameter`
 
 Click `Parameter name` again, this time select `token`
 
-In the value field, paste the token created (above) (when you defined `puppet:summary` HEC collector on the Splunk Server
+In the value field, paste the token created (above) when you defined `puppet:summary` HEC collector on the Splunk Server
 in double quotes.
 
 Click `Add Parameter`
@@ -84,9 +84,7 @@ These two parameters, `token` and `server`, are the only required ones.
 
 ## 4. Command line step
 
-*Note*: If you're doing this as part of the Channel Partner SE training, the
-following change has already been made (scripted when the VM was launched)
-You should still follow the steps, but the change will already be there.
+Note: If you're doing this as part of the Channel Partner SE training, the following change has already been made (scripted when the VM was launched) You should still follow the steps, but the change will already be there.
 
 Log into the command line of the Puppet Master node
 
