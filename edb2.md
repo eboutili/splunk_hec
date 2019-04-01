@@ -7,15 +7,27 @@ Install a Splunk Demo Server and the Puppet Report Viewer (scripted)
 Copy the Containerized Splunk installation script to a temporary directory on
 the Puppet Master server and run it as root or using sudo.
 
-Create a HEC input (puppet:summary)
+Create a HEC input for puppet summaries
 -----------
 Log into the new Splunk Server: `http://<your-master-ip>:8000`
 - Login/Password: admin/puppetlabs
 
-Enable the HEC collector: -> -> 
+Browse to where you can enable the HEC collector and create a new token (for receiving puppet data)
 
-Create new collector: Data inputs -> New -> 
-- Name: puppet:summary
+`Settings -> Data Input -> http Event Collector -> Global Settings`
+
+Click `Enabled` and `Save`
+
+Click `New Token`
+
+- Enter the following in the `Name` Field: `puppet:summary`
+
+Click `Next`
+
+Click `Select` then `Select Source Type`
+
+- Enter: `puppet:summary`
+
 - Type: puppet:summary
 
 A new token is generated. You'll copy this the the Puppet Master later
