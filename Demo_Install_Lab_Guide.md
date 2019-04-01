@@ -13,6 +13,9 @@ Login with:
 
 The script downloads and installs the Docker version of Splunk Enterprise (includes a trial license). Then it runs the container and uses `docker exec` to install the Puppet Report Viewer add-on.
 
+Since the Puppet Console and the Splunk Console are installed on the same server, they'll
+use the same IP with Splunk on port 8000 (http) and Puppet on port 443 (https)
+
 Create a HEC input for puppet summaries
 -----------
 Log into the new Splunk Server's Console on port 8000: `http://<your-master-ip>:8000`
