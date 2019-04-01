@@ -9,9 +9,9 @@ Copy the
 to a temporary directory on your Puppet Master server and run the script as root (or using sudo). 
 Login with: `ssh -i ~/student.pem centos@<your-master-ip>`
 
-The script downloads and installs the Docker version of Splunk Enterprise (includes a trial license). Then it runs the container and uses `docker exec` to install the Puppet Report Viewer add-on.
+The script downloads and installs the Docker version of Splunk Enterprise (includes a trial license), then it runs the container and uses `docker exec` to install the Puppet Report Viewer add-on.
 
-Since the Puppet Console and the Splunk Console are installed on the same server, they'll
+Note: Since the Puppet Console and the Splunk Console are installed on the same server, they'll
 use the same IP with Splunk on port 8000 (http) and Puppet on port 443 (https)
 
 Create a HEC input for puppet summaries
