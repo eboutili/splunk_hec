@@ -13,7 +13,9 @@ The script downloads and installs the Docker version of Splunk Enterprise (inclu
 Create a HEC input for puppet summaries
 -----------
 Log into the new Splunk Server's Console on port 8000: `http://<your-master-ip>:8000`
+
 (Note: http not https)
+
 - Login/Password: admin/puppetlabs
 
 Browse to the HTTP Event Collector configuration screen 
@@ -46,7 +48,7 @@ Log into the Puppet Console: `https://<your-master-ip>`
 
 - Login/Password: admin/puppetlabs
 
-Browse to the Master's configuration tab:
+Browse to the Master's configuration tab
 
 Select Classification in the left sidebar.
 
@@ -66,10 +68,14 @@ Click `Add Parameter`
 
 Click `Parameter name` again, this time select `token`
 
-In the value field, paste the token created when you defined a new HEC collectory on the Splunk Server
+In the value field, paste the token created (above) (when you defined `puppet:summary` HEC collector on the Splunk Server
 in double quotes.
 
-These are the only required parameters
+These two parameters, token and server, the only required ones.
+
+*Note*: If you're doing this as part of the Channel Partner SE training, the
+following has already been done before class. You should still follow the steps, but you'll
+see that the change has already been made. 
 
 ### Command line step
 
@@ -85,7 +91,3 @@ Change it to: `reports = puppetdb,splunk_hec`
 
 Save and exit the editor
 `^X -> Y -> <Return>`
-
-Do a puppet run:
-
-`sudo puppet agent -t`
