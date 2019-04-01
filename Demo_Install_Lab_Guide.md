@@ -4,8 +4,12 @@ Puppet/Splunk Demo Installation and Configuration
 Install a Splunk Demo Server and the Puppet Report Viewer (scripted)
 -----------
 
-Copy the Containerized Splunk installation script to a temporary directory on
-the Puppet Master node and run it as root or using sudo.
+Copy the Splunk installation script to a temporary directory on the Puppet
+Master node and run it as root or using sudo. 
+
+The script downloads and installs the Docker version of Splunk Enterprise
+(includes a trial license). Then it runs the container and uses `docker exec`
+to install the Puppet Report Viewer add-on.
 
 Create a HEC input for puppet summaries
 -----------
@@ -81,4 +85,3 @@ Save and exit the editor
 Do a puppet run:
 
 `sudo puppet agent -t`
-
