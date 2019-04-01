@@ -84,7 +84,9 @@ Log into the command line of the Puppet Master node:
 `ssh -i ~/student.pem centos@<your-master-ip>`
 
 Edit the puppet server's configuration file:
-`sudo nano /etc/puppetlabs/puppet/puppet.conf`
+`sudo nano /etc/puppetlabs/puppet/puppet.conf` 
+
+(vi is also available of course)
 
 Go the line that says: `reports = puppetdb`
 Change it to: `reports = puppetdb,splunk_hec`
