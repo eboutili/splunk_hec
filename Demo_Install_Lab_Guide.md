@@ -16,25 +16,25 @@ Log into the new Splunk Server's Console on port 8000: `http://<your-master-ip>:
 
 (Note: http not https)
 
-- Login/Password: admin/puppetlabs
+Login/Password: admin/puppetlabs
 
 Browse to the HTTP Event Collector configuration screen 
 
 `Settings -> Data Input -> HTTP Event Collector -> Global Settings`
 
-Click `Enabled` and `Save`
+- Click `Enabled` and `Save`
 
-Click `New Token`
+- Click `New Token`
 
 - Enter the following in the `Name` Field: `puppet:summary`
 
-Click `Next`
+- Click `Next`
 
-Click `Select` then `Select Source Type`
+- Click `Select` then `Select Source Type`
 
-Enter (or select): `puppet:sumary`
+- Enter (or select): `puppet:summary`
 
-Click `Review` and check for typos. Click `Submit`
+- Click `Review` and check for typos. Click `Submit`
 
 A new token is generated. (You'll copy this to the Puppet Master in the next set of steps.)
 
@@ -46,15 +46,15 @@ Log into the Puppet Console: `https://<your-master-ip>`
 
 (Since this is a demo IP address, you may have to click through a security certificate warning)
 
-- Login/Password: admin/puppetlabs
+Login/Password: admin/puppetlabs
 
 Browse to the Master's configuration tab
 
-Select Classification in the left sidebar.
+- Select Classification in the left sidebar.
 
-Expand the PE Infrastructure group (click the `+` sign)
+- Expand the PE Infrastructure group (click the `+` sign)
 
-Click `Master` and go to the `Configuration` tab
+- Click `Master` and go to the `Configuration` tab
 
 Under `Classes`, add a new class called `splunk_hec`
 
@@ -71,15 +71,20 @@ Click `Parameter name` again, this time select `token`
 In the value field, paste the token created (above) (when you defined `puppet:summary` HEC collector on the Splunk Server
 in double quotes.
 
-These two parameters, token and server, the only required ones.
+Click `Add Parameter`
 
-*Note*: If you're doing this as part of the Channel Partner SE training, the
-following has already been done before class. You should still follow the steps, but you'll
-see that the change has already been made. 
+Check for typos, then Click `Commit 1 Change`
+
+These two parameters, `token` and `server`, are the only required ones.
+
 
 ### Command line step
 
-Log into the command line of the Puppet Master node:
+*Note*: If you're doing this as part of the Channel Partner SE training, the
+following change has already been made (scripted when the VM was launched)
+You should still follow the steps, but the change will already be there.
+
+Log into the command line of the Puppet Master node
 
 `ssh -i ~/student.pem centos@<your-master-ip>`
 
