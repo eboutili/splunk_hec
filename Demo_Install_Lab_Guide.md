@@ -4,7 +4,7 @@ Foundational Partner Training Lab
 Puppet/Splunk Demo Installation and Configuration
 ==============
 
-Install a Splunk Demo Server and the Puppet Report Viewer (scripted)
+1. Install a Splunk Demo Server and the Puppet Report Viewer (scripted)
 -----------
 
 Copy the 
@@ -17,8 +17,9 @@ The script downloads and installs the Docker version of Splunk Enterprise (inclu
 Note: Since the Puppet Console and the Splunk Console are installed on the same server, they'll
 use the same IP with Splunk on port 8000 (http) and Puppet on port 443 (https)
 
-Create a HEC input for puppet summaries
+2. Create a HEC input for puppet summaries
 -----------
+
 Log into the new Splunk Server's Console on port 8000: `http://<your-master-ip>:8000`
 
 (Note: http not https)
@@ -45,8 +46,9 @@ Browse to the HTTP Event Collector configuration screen
 
 A new token is generated. (You'll copy this to the Puppet Master in the next set of steps.)
 
-Configure the HEC token and Splunk DNS name on the Puppet Master side
+3. Configure the HEC token and Splunk DNS name on the Puppet Master side
 ------------
+
 Log into the Puppet Console: `https://<your-master-ip>`
 
 (Note: This one _is_ https)
@@ -85,7 +87,8 @@ Check for typos, then Click `Commit 1 Change`
 These two parameters, `token` and `server`, are the only required ones.
 
 
-### Command line step
+4. Command line step
+------------
 
 *Note*: If you're doing this as part of the Channel Partner SE training, the
 following change has already been made (scripted when the VM was launched)
