@@ -1,4 +1,4 @@
-Foundational Partner Training Lab
+Partner SE Training Lab
 ==============
 
 Puppet/Splunk Demo Installation and Configuration
@@ -14,9 +14,9 @@ Login with: `ssh -i ~/student.pem centos@<your-master-ip>`
 The script downloads and installs the Docker version of Splunk Enterprise (includes a trial license), then it runs the container and uses `docker exec` to install the Puppet Report Viewer add-on.
 
 Note: Since the Puppet Console and the Splunk Console are installed on the same server, they'll
-use the same IP with Splunk on port 8000 (http) and Puppet on port 443 (https)
+use the same IP. Splunk runs on port 8000 (http) and Puppet runs on port 443 (https)
 
-## 2. Create a HEC input for puppet summaries
+## 2. Create a HEC input for puppet agent summaries
 
 Log into the new Splunk Server's Console on port 8000: `http://<your-master-ip>:8000`
 
@@ -84,7 +84,7 @@ These two parameters, `token` and `server`, are the only required ones.
 
 ## 4. Command line step
 
-Note: If you're doing this as part of the Channel Partner SE training, the following change has already been made (scripted when the VM was launched) You should still follow the steps, but the change will already be there.
+Note: If you're doing this as part of the Channel Partner SE training, the following change has already been made (scripted when the VM was launched). You should still follow the steps, but the change will already be there.
 
 Log into the command line of the Puppet Master node
 
