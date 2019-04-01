@@ -41,15 +41,13 @@ Browse to the Master configuration tab:
 
 Select Classification in the left sidebar.
 
-`Classification -> <Expand the Master Group (click the + sign)> -> Configuration`
-
-Expand the PE Infrastructure group (click the + sign)
+Expand the PE Infrastructure group (click the `+` sign)
 
 Click `Master` and go to the `Configuration` tab
 
 Under `Classes`, add a new class called `splunk_hec`
 
-Click `Add Class`
+Click `Parameters` to see the list of available settings
 
 Define two parameters: (leave the others undefined)
 - server: localhost
