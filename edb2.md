@@ -26,24 +26,30 @@ Click `Next`
 
 Click `Select` then `Select Source Type`
 
-- Enter: `puppet:summary`
+Click `Review` and check for typos. Click `Submit`
 
-- Type: puppet:summary
-
-A new token is generated. You'll copy this the the Puppet Master later
+A new token is generated. (You'll copy this to the Puppet Master later.)
 
 Install splunk_hec module in Puppet environment and configure with the HEC token and Splunk Server
 ------------
 Log into the Puppet Master: `https://<your-master-ip>`
 
-(allow the unsigned certificate if prompted)
+(Since this is a temporary server/IP, you may have to click through a security certificate warning)
 
 Browse to the Master configuration tab:
+- Login/Password: admin/puppetlabs
+
+Select Classification in the left sidebar.
 
 `Classification -> <Expand the Master Group (click the + sign)> -> Configuration`
 
-Create a new class:
-`splunk_hec`
+Expand the PE Infrastructure group (click the + sign)
+
+Click `Master` and go to the `Configuration` tab
+
+Under `Classes`, add a new class called `splunk_hec`
+
+Click `Add Class`
 
 Define two parameters: (leave the others undefined)
 - server: localhost
