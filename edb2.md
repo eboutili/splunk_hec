@@ -7,7 +7,7 @@ Install a Splunk Demo Server and the Puppet Report Viewer (scripted)
 Copy the Containerized Splunk installation script to a temporary directory on
 the Puppet Master server and run it as root or using sudo.
 
-Create at a HEC input (puppet:summary)
+Create an a HEC input (puppet:summary)
 -----------
 Log in to the new Splunk Server: `http://<your-master-ip>:8000`
 - Login/Password: admin/puppetlabs
@@ -32,18 +32,24 @@ Create a new class:
 
 Define two parameters: (leave the others undefined)
 - server: localhost
-- token: <token by the collector you defined above>
+- token: `<token by the collector you defined above>`
 
 Log into the command line of the Puppet Master server:
 
-ssh -i ~/student.pem centos<your-master-ip>
+`ssh -i ~/student.pem centos<your-master-ip>`
+
 Edit the server configuration file:
 `nano /etc/puppetlabs/puppet/puppet.conf`
-Change this line from:
-report
-report,splunk_hec
+Change this line:
+
+Old:
+`report`
+
+New:
+`report,splunk_hec`
+
 Save and exit the editor
-^X
+`^X`
 
 Do a puppet run:
 
