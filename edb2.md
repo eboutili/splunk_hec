@@ -50,30 +50,22 @@ Under `Classes`, add a new class called `splunk_hec`
 Click `Parameters` to see the list of available settings
 
 Define two parameters: (leave the others undefined)
-- server: localhost
-- token: `<token by the collector you defined above>`
+- server: `localhost`
+- token: `<paste the token created when you defined a new HEC collectory on the Splunk Server>
 
 Log into the command line of the Puppet Master server:
 
-`ssh -i ~/student.pem centos<your-master-ip>`
+`ssh -i ~/student.pem centos@<your-master-ip>`
 
 Edit the puppet server configuration file:
-`nano /etc/puppetlabs/puppet/puppet.conf`
+`sudo nano /etc/puppetlabs/puppet/puppet.conf`
 
-Change this line:
-
-Old:
-
-`report`
-
-New:
-
-`report,splunk_hec`
+Go the line that says: `reports = puppetdb`
+Change it to: `reports = puppetdb,splunk_hec`
 
 Save and exit the editor
-`^X`
+`^X -> Y -> <Return>`
 
 Do a puppet run:
 
-`puppet agent -t`
-
+`sudo puppet agent -t`
