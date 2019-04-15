@@ -15,6 +15,6 @@ ENV SPLUNK_PASSWORD puppetlabs
 EOF
 docker build -t splunkdemo_i .
 docker run --name splunkdemo_c --restart always -d -p 8000:8000 -p 8088:8088 splunkdemo_i
-# docker exec splunkdemo_c bash -c 'sudo wget https://github.com/puppetlabs/TA-puppet-report-viewer/archive/1.3.5.tar.gz -O - | gunzip -c - | tar -C /opt/splunk/etc/apps -xf -'
-sleep 5
+echo "sleeping 20..."
+sleep 20
 docker exec splunkdemo_c bash -c 'sudo wget https://github.com/puppetlabs/TA-puppet-report-viewer/archive/1.3.5.tar.gz -O - | sudo gunzip -c - | sudo tar -C /opt/splunk/etc/apps -xf -'
