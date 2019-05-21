@@ -19,8 +19,8 @@ ENV SPLUNK_PASSWORD puppetlabs
 EOF
 docker build -t splunkdemo_i .
 docker run --name splunkdemo_c --restart always -d -p 8000:8000 -p 8088:8088 splunkdemo_i
-echo "sleeping 15 seconds..."
-sleep 15
+echo "sleeping 30 seconds..."
+sleep 30
 docker exec splunkdemo_c bash -c 'sudo gunzip -c /tmp/1.3.5.tar.gz | sudo tar -C $APPSDIR -xf -'
 docker exec splunkdemo_c bash -c 'sudo cp /tmp/inputs.conf $APPSDIR/TA-puppet-report-viewer-1.3.5/local/inputs.conf'
 # docker exec splunkdemo_c bash -c 'sudo $SPLUNK_HOME/bin/splunk restart'
