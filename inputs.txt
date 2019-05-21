@@ -1,0 +1,9 @@
+[http://puppet:summary]
+disabled=0
+sourcetype=puppet:summary
+token=0990bdc6-9ed2-4f3a-9463-41ca435b28a9
+
+[http://puppet:detailed]
+disabled=0
+sourcetype=puppet:detailed
+token=ef65907a-bb28-4342-9968-0014dec5401f
